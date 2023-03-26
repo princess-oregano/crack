@@ -1,19 +1,19 @@
 SRCDIR := src
 OBJDIR := obj
 
-SRC := main.cpp crack.cpp args.cpp file.cpp
+SRC := main.cpp crack.cpp args.cpp file.cpp video.cpp
 OBJ := $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 TARGET := crack
 
 CXX := g++
-LDFLAGS := -lsfml-graphics -lsfml-window -lsfml-system
+LDFLAGS := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                      \
 	    -Weffc++ -Waggressive-loop-optimizations -Wc++0x-compat           \
 	    -Wc++11-compat -Wc++14-compat -Wcast-align -Wcast-qual            \
 	    -Wchar-subscripts -Wconditionally-supported -Wconversion          \
 	    -Wctor-dtor-privacy -Wempty-body -Wfloat-equal                    \
 	    -Wformat-nonliteral -Wformat-security -Wformat-signedness         \
-	    -Wformat=2 -Winline -Wlarger-than=8192 -Wlogical-op               \
+	    -Wformat=2 -Winline -Wlarger-than=40000 -Wlogical-op              \
 	    -Wmissing-declarations -Wnon-virtual-dtor -Wopenmp-simd           \
 	    -Woverloaded-virtual -Wpacked -Wpointer-arith -Wredundant-decls   \
 	    -Wshadow -Wsign-conversion -Wsign-promo -Wstack-usage=8192        \
