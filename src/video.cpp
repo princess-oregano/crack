@@ -3,10 +3,10 @@
 #include <SFML/Audio.hpp>
 #include <vector>
 
-void
+int
 video()
 {
-        sf::RenderWindow window(sf::VideoMode(600, 475), "Cracked");
+        sf::RenderWindow window(sf::VideoMode(600, 475), "Why r u gay");
 
         sf::SoundBuffer buffer;
         buffer.loadFromFile("sans.wav");
@@ -23,11 +23,13 @@ video()
         int frame_counter = 0;
         char frame_name[30] = {};
 
-        while (window.isOpen() && progress_bar_length < 4200) {
+        while (progress_bar_length < 4200) {
                 sf::Event event;
                 while (window.pollEvent(event)) {
-                        if (event.type == sf::Event::Closed)
+                        if (event.type == sf::Event::Closed) {
                                 window.close();
+                                return VID_CLOSE;
+                        }
                 }
 
                 sf::sleep(sf::seconds(0.1f));
@@ -44,9 +46,7 @@ video()
                 texture.loadFromFile(frame_name);
 
                 sf::Sprite sprite(texture);
-                sf::Vector2u size = texture.getSize();
                 sprite.setOrigin(0, 0);
-                sf::Vector2f increment(20.f, 20.f);
                 window.draw(sprite);
 
                 if (frame_counter < n_frames)
@@ -54,4 +54,6 @@ video()
                 else
                         frame_counter = 0;
         }
+
+        return VID_NORMAL;
 }

@@ -34,7 +34,8 @@ main(int argc, char *argv[])
         crack(buffer);
 
         // Make SFML cringe again.
-        video();
+        while (video() != VID_NORMAL)
+                ;
 
         // Write cracked version.
         fwrite(buffer, sizeof(char), (size_t) src.stats.st_size, dst.stream);

@@ -27,7 +27,6 @@ CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                    
 	    -fsized-deallocation -fstack-check -fstack-protector              \
 	    -fstrict-overflow -flto-odr-type-merging                          \
 	    -fno-omit-frame-pointer                                           \
-	    -fsanitize=address                                                \
 	    -fsanitize=alignment                                              \
 	    -fsanitize=bool                                                   \
 	    -fsanitize=bounds                                                 \
@@ -35,7 +34,6 @@ CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                    
 	    -fsanitize=float-cast-overflow                                    \
 	    -fsanitize=float-divide-by-zero                                   \
 	    -fsanitize=integer-divide-by-zero                                 \
-	    -fsanitize=leak                                                   \
 	    -fsanitize=nonnull-attribute                                      \
 	    -fsanitize=null                                                   \
 	    -fsanitize=object-size                                            \
